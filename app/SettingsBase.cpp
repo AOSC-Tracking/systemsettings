@@ -150,20 +150,6 @@ void SettingsBase::initToolBar()
     quitAction = actionCollection()->addAction(KStandardAction::Quit, QStringLiteral("quit_action"), this, &QWidget::close);
 
     if (m_mode == BaseMode::SystemSettings) {
-        switchToIconAction = actionCollection()->addAction(QStringLiteral("switchto_iconview"), this, [this] {
-            BaseConfig::setActiveView(QStringLiteral("systemsettings_icon_mode"));
-            changePlugin();
-        });
-        switchToIconAction->setText(i18nd("systemsettings", "Switch to Icon View"));
-        switchToIconAction->setIcon(QIcon::fromTheme(QStringLiteral("view-list-icons")));
-
-        switchToSidebarAction = actionCollection()->addAction(QStringLiteral("switchto_sidebar"), this, [this] {
-            BaseConfig::setActiveView(QStringLiteral("systemsettings_sidebar_mode"));
-            changePlugin();
-        });
-        switchToSidebarAction->setText(i18nd("systemsettings", "Switch to Sidebar View"));
-        switchToSidebarAction->setIcon(QIcon::fromTheme(QStringLiteral("view-sidetree")));
-
         highlightChangesAction = actionCollection()->addAction(QStringLiteral("highlight_changes"), this, [this] {
             if (activeView) {
                 activeView->toggleDefaultsIndicatorsVisibility();

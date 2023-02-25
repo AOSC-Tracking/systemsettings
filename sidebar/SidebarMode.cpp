@@ -291,8 +291,7 @@ void SidebarMode::showActionMenu(const QPoint &position)
     });
     menu->setAttribute(Qt::WA_DeleteOnClose);
 
-    const QStringList actionList{QStringLiteral("switchto_iconview"),
-                                 QStringLiteral("highlight_changes"),
+    const QStringList actionList{QStringLiteral("highlight_changes"),
                                  QStringLiteral("configure"),
                                  QStringLiteral("report_bug_in_current_module"),
                                  QStringLiteral("help_report_bug"),
